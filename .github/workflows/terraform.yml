@@ -30,10 +30,10 @@ jobs:
         id: plan
         env:
           TF_WORKSPACE: ${{ env.TF_WORKSPACE }}
-        run: terraform plan -input=false -out=tfplan -var-file=vars.tfvars"
+        run: terraform plan -input=false -out=tfplan -var-file=vars/prod.tfvars"
 
       - name: Terraform Apply
         if: ${{ github.ref == 'refs/heads/main' }} # Only apply on the main branch
         env:
           TF_WORKSPACE: ${{ This modifies the default permissions granted to GITHUB_TOKEN. This will vary depending on the needs of your workflow. For more information, see "Assigning permissions to jobs."env.TF_WORKSPACE }}
-        run: terraform apply -input=false -auto-approve tfplan -var-file=vars.tfvars"
+        run: terraform apply -input=false -auto-approve tfplan -var-file=vars/prod.tfvars"
