@@ -33,7 +33,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -input=false -reconfigure
       
       - name: Terraform Plan
         id : plan
