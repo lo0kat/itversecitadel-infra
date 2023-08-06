@@ -13,4 +13,7 @@ Utilizing public cloud (OVH) for personnal projects
 ### Openstack Requirements
 1) Create an identity user on OVH
 2) Set the following variables : 
-    - 
+    - OS_TENANT_ID
+    - OS_USERNAME
+    - OS_PASSWORD
+    - OS_REGION_NAME
