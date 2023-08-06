@@ -30,7 +30,7 @@ jobs:
       
       - name: Terraform Plan
         id : plan
-        run: terraform plan -input=false -out=tfplan -var-file=vars/prod.tfvars"
+        run: terraform plan -input=false -out=tfplan -var-file="vars/prod.tfvars"
 
       # - name: Terraform Apply
       #   if: ${{ github.ref == 'refs/heads/main' }} # Only apply on the main branch
