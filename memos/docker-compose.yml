@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  memos:
+    image: neosmemo/memos:latest
+    container_name: memos
+    volumes:
+      - ~/.memos/:/var/opt/memos
+
+      
+  reverse_proxy:
+    image: nginx:latest
+    container_name: memos_reverse_proxy
+    ports:
+      - "80:80" # Port for HTTP requests to the reverse proxy
+      - "443:443" # Port for HTTPS requests to the reverse proxy
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - memos
+    # Add any additional configurations for the reverse proxy, such as environment variables, etc.
