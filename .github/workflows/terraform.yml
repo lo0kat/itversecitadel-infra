@@ -31,6 +31,10 @@ jobs:
         id: fmt
         run: terraform fmt -check
 
+      - name: Terraform clean
+        id: clean
+        run: rm -rf .terraform
+        
       - name: Terraform Init
         id: init
         run: terraform init -input=false 
