@@ -1,5 +1,5 @@
 module "vm" {
-  source     = "git@github.com:lo0kat/terraform-ovh-vmservice.git"
+  source     = "https://github.com/lo0kat/itversecitadel-infra.git"
   project_id = var.project_id
   vm_name    = var.vm_name
   region     = var.region
